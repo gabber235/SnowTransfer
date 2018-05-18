@@ -1,0 +1,40 @@
+<h1 id="snowtransfer">SnowTransfer</h1>
+<hr />
+<h2 id="a-minimalistic-rest-client-for-the-discord-api">A minimalistic rest client for the discord api</h2>
+<hr>
+<p><a href="https://github.com/DasWolke/SnowTransfer/stargazers"><img src="https://img.shields.io/github/stars/DasWolke/SnowTransfer.svg" alt="GitHub stars"></a> <a href="https://github.com/DasWolke/SnowTransfer"><img src="https://img.shields.io/travis/DasWolke/SnowTransfer.svg" alt="Travis"></a> <a href="https://www.npmjs.com/package/snowtransfer"><img src="https://img.shields.io/npm/dm/snowtransfer.svg" alt="npm"></a> <a href="https://www.npmjs.com/package/snowtransfer"><img src="https://img.shields.io/npm/v/snowtransfer.svg" alt="npm"></a></p>
+<p>Part of the WeatherStack</p>
+<p>SnowTransfer is a small library specially made to <strong>only</strong> cover the REST/HTTP area of the discord api.<br>It makes no assumptions about the rest of your stack, therefore you can use it anywhere as long as you use node 8 or higher.</p>
+<h4 id="some-of-the-things-that-make-snowtransfer-awesome-">Some of the things that make SnowTransfer awesome:</h4>
+<ul>
+<li>No requirement for other components</li>
+<li>Full coverage of the discord rest api</li>
+<li>Well documented</li>
+<li>Sentry integration</li>
+</ul>
+<h4 id="general-usecase-">General Usecase:</h4>
+<p>SnowTransfer is not your everyday library,<br>especially compared to other libraries, it makes sense to use it when you:</p>
+<ul>
+<li>Want to build a microservice based bot, where casual discord libraries would not be suitable since they assume the availability of other components like a gateway or a cache</li>
+<li>Only need a simple rest client that can be wrapped easily.</li>
+</ul>
+<h4 id="microservice-bots-">Microservice Bots:</h4>
+<p>I&#39;ve written a general whitepaper on the idea of microservice bots, which you can find on gist: <a href="https://gist.github.com/DasWolke/c9d7dfe6a78445011162a12abd32091d">Microservice Bot Whitepaper</a></p>
+<h4 id="documentation-">Documentation:</h4>
+<p>You can find the docs at <a href="https://daswolke.github.io/SnowTransfer/">https://daswolke.github.io/SnowTransfer/</a></p>
+<h4 id="installation-">Installation:</h4>
+<p>To install SnowTransfer, make sure that you have node 8 or higher and npm installed on your computer.</p>
+<p>Then run the following command in a terminal <code>npm install snowtransfer</code></p>
+<h3 id="example-">Example:</h3>
+<pre><code class="lang-js">let SnowTransfer = require(&#39;snowtransfer&#39;);
+let client = new SnowTransfer(&#39;DISCORD BOT TOKEN&#39;);
+let request = async () =&gt; {
+    let message = await client.channel.createMessage(&#39;channel id&#39;, &#39;hi there&#39;);
+    console.log(message);
+};
+request().then(() =&gt; {
+    // message was sent to discord
+}).catch(e =&gt; {
+    // an error occurred
+});
+</code></pre>
