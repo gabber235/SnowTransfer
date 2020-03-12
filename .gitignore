@@ -6,3 +6,5 @@ snowtransfer.iml
 .DS_STORE
 SnowTransfer
 package-lock.json
+test.js
+.vscode

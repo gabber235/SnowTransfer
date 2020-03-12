@@ -24,7 +24,7 @@ class RequestHandler {
             baseURL: this.options.baseHost + Endpoints.BASE_URL,
             headers: {
                 Authorization: options.token,
-                'User-Agent': `DiscordBot (https://github.com/DasWolke/SnowTransfer, ${version})`
+                'User-Agent': `DiscordBot (https://github.com/gabber235/SnowTransfer, ${version})`
             }
         });
         this.raven = options.raven ? options.raven : null;

@@ -17,7 +17,8 @@
     "microservice bot"
   ],
   "scripts": {
-    "build:docs": "node_modules/.bin/docma -c docma.config.json"
+    "build:docs": "node_modules/.bin/docma -c docma.config.json",
+    "debug": "node --nolazy --inspect-brk=9229 test.js"
   },
   "repository": {
     "type": "git",
@@ -27,14 +28,14 @@
   "author": "wolke <wolke@weeb.sh>",
   "license": "MIT",
   "dependencies": {
-    "axios": "~0.18.1",
-    "form-data": "~2.3.1"
+    "axios": "^0.19.2",
+    "form-data": "^3.0.0"
   },
   "optionalDependencies": {
-    "raven": "~2.2.1"
+    "raven": "^2.6.4"
   },
   "devDependencies": {
-    "docma": "^1.5.1",
-    "eslint": "^4.4.1"
+    "docma": "^3.2.2",
+    "eslint": "^6.8.0"
   }
 }
