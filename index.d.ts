@@ -64,7 +64,7 @@ declare module 'snowtransfer' {
         /**
          * optional [sentry raven](https://docs.sentry.io/clients/node/config/) instance used for catching errors
         */
-        raven?: Raven | null;
+        raven?: Any | null;
     }
 
     /**
@@ -73,11 +73,11 @@ declare module 'snowtransfer' {
  * Usually SnowTransfer creates a method handler for you, this is here for completion
  *
  * You can access the methods listed via `client.channel.method`, where `client` is an initialized SnowTransfer instance
- * @param {RequestHandler} requestHandler - request handler that calls the rest api
+ * @param {Any} requestHandler - request handler that calls the rest api
  * @constructor
  */
 export class ChannelMethods {
-    constructor(requestHandler: RequestHandler);
+    constructor(requestHandler: Any);
     /**
      * Get a channel via Id
      * @param {String} channelId - Id of the channel
@@ -592,10 +592,10 @@ export type Message = {
  * Usually SnowTransfer creates a method handler for you, this is here for completion
  *
  * You can access the methods listed via `client.user.method`, where `client` is an initialized SnowTransfer instance
- * @param {RequestHandler} requestHandler
+ * @param {Any} requestHandler
  */
 export class UserMethods {
-    constructor(requestHandler: RequestHandler);
+    constructor(requestHandler: Any);
     /**
      * Get information about current user
      * @returns {Promise.<SelfUser>} [user object](https://discordapp.com/developers/docs/resources/user#user-object)
@@ -692,11 +692,11 @@ export type SelfUser = User;
  * Usually SnowTransfer creates a method handler for you, this is here for completion
  *
  * You can access the methods listed via `client.emoji.method`, where `client` is an initialized SnowTransfer instance
- * @param {RequestHandler} requestHandler - request handler that calls the rest api
+ * @param {Any} requestHandler - request handler that calls the rest api
  * @constructor
  */
 export class EmojiMethods {
-    constructor(requestHandler: RequestHandler);
+    constructor(requestHandler: Any);
     /**
      * Get a list of emojis of a guild
      * @param {String} guildId - Id of the guild
@@ -803,10 +803,10 @@ export type Emoji = {
  * Usually SnowTransfer creates a method handler for you, this is here for completion
  *
  * You can access the methods listed via `client.webhook.method`, where `client` is an initialized SnowTransfer instance
- * @param {RequestHandler} requestHandler - request handler that calls the rest api
+ * @param {Any} requestHandler - request handler that calls the rest api
  */
 export class WebhookMethods {
-    constructor(requestHandler: RequestHandler);
+    constructor(requestHandler: Any);
     /**
      * Create a new Webhook
      * @param {String} channelId - Id of the channel
@@ -876,11 +876,11 @@ export class WebhookMethods {
          |--------------------|---------------:|
          | MANAGE_WEBHOOKS    | without token |
      */
-    updateWebhook(webhookId: string, token?: string, data: {
+    updateWebhook(webhookId: string, data: {
         name?: string;
         avatar?: string;
         channel_id?: string;
-    }): Promise<object>;
+    }, token?: string): Promise<object>;
     /**
      * Delete a Webhook
      * @param {String} webhookId - Id of the webhook
@@ -939,10 +939,10 @@ export class WebhookMethods {
  * Usually SnowTransfer creates a method handler for you, this is here for completion
  *
  * You can access the methods listed via `client.guild.method`, where `client` is an initialized SnowTransfer instance
- * @param {RequestHandler} requestHandler - request handler that calls the rest api
+ * @param {Any} requestHandler - request handler that calls the rest api
  */
 export class GuildMethods {
-    constructor(requestHandler: RequestHandler);
+    constructor(requestHandler: Any);
     /**
      * Create a new Guild, **limited to 10 guilds (you may create more if you are whitelisted)**
      * Check the [discord docs](https://discordapp.com/developers/docs/resources/guild#create-guild) for more infos
@@ -1625,10 +1625,10 @@ export type Ban = {
  * Usually SnowTransfer creates a method handler for you, this is here for completion
  *
  * You can access the methods listed via `client.invite.method`, where `client` is an initialized SnowTransfer instance
- * @param {RequestHandler} requestHandler - request handler that calls the rest api
+ * @param {Any} requestHandler - request handler that calls the rest api
  */
 export class InviteMethods {
-    constructor(requestHandler: RequestHandler);
+    constructor(requestHandler: Any);
     /**
      * Get the invite data on an invite id
      * @param {String} inviteId - Id of the invite
@@ -1680,10 +1680,10 @@ export type Invite = {
  * Usually SnowTransfer creates a method handler for you, this is here for completion
  *
  * You can access the methods listed via `client.voice.method`, where `client` is an initialized SnowTransfer instance
- * @param {RequestHandler} requestHandler - request handler that calls the rest api
+ * @param {Any} requestHandler - request handler that calls the rest api
  */
 export class VoiceMethods {
-    constructor(requestHandler: RequestHandler);
+    constructor(requestHandler: Any);
     /**
      * Get currently available voice regions that can be used when creating servers
      * @returns {Promise.<VoiceRegion[]>} Array of [voice region](https://discordapp.com/developers/docs/resources/voice#voice-region-object) objects
@@ -1719,10 +1719,10 @@ export type VoiceRegion = {
  * Usually SnowTransfer creates a method handler for you, this is here for completion
  *
  * You can access the methods listed via `client.bot.method`, where `client` is an initialized SnowTransfer instance
- * @param {RequestHandler} requestHandler request handler that calls the rest api
+ * @param {Any} requestHandler request handler that calls the rest api
  */
 export class BotMethods {
-    constructor(requestHandler: RequestHandler);
+    constructor(requestHandler: Any);
     /**
      * Get the gateway url to connect to
      * @returns  {Promise.<GatewayData>} [Gateway data](https://discordapp.com/developers/docs/topics/gateway#get-gateway-example-response)
@@ -1759,10 +1759,10 @@ export type GatewayData = {
  * Usually SnowTransfer creates a method handler for you, this is here for completion
  *
  * You can access the methods listed via `client.auditLog.method`, where `client` is an initialized SnowTransfer instance
- * @param {RequestHandler} requestHandler - request handler that calls the rest api
+ * @param {Any} requestHandler - request handler that calls the rest api
  */
 export class AuditLogMethods {
-    constructor(requestHandler: RequestHandler);
+    constructor(requestHandler: Any);
     /**
      * Get the audit logs of the specified guild id
      * @param {String} guildId - id of a guild
@@ -1788,12 +1788,12 @@ export class AuditLogMethods {
 /**
  * @typedef {Object} AuditLogObject
  * @description Audit Log Object
- * @property {Webhook[]} webhooks - list of [webhooks](https://discordapp.com/developers/docs/resources/webhook#webhook-object-webhook-structure) found in the audit log
+ * @property {Any[]} webhooks - list of [webhooks](https://discordapp.com/developers/docs/resources/webhook#webhook-object-webhook-structure) found in the audit log
  * @property {User[]} users - list of [users](https://discordapp.com/developers/docs/resources/user#user-object) found in the audit log
  * @property {AuditLogEntry[]} audit_log_entries - list of [audit log entries](https://discordapp.com/developers/docs/resources/audit-log#audit-log-entry-object-audit-log-entry-structure)
  */
 export type AuditLogObject = {
-    webhooks: Webhook[];
+    webhooks: Any[];
     users: User[];
     audit_log_entries: AuditLogEntry[];
 };
