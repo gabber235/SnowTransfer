@@ -526,6 +526,7 @@ export type Channel = {
  * @property {String} type - type of the overwrite, either member or role
  */
 export type PermissionOverwrite = {
+    id: string;
     allow: number;
     deny: number;
     type: string;
