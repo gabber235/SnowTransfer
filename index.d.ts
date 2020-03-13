@@ -483,7 +483,7 @@ export class ChannelMethods {
 
 /**
  * @typedef {Object} Channel
- * @property {String} Id - Id of the channel
+ * @property {String} id - Id of the channel
  * @property {Number} type - [type](https://discordapp.com/developers/docs/resources/channel#channel-object-channel-types) of channel
  * @property {String} [guild_id] - Id of the {Guild} of the channel
  * @property {Number} [position] - sorting position of the channel
@@ -501,7 +501,7 @@ export class ChannelMethods {
  * @property {String} [parent_id] - Id of the parent category for a channel
  */
 export type Channel = {
-    Id: string;
+    id: string;
     type: number;
     guild_id?: string;
     position?: number;
