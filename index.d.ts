@@ -1041,9 +1041,14 @@ export class GuildMethods {
      * @param {Object} data - channel properties
      * @param {String} data.name - name of the channel
      * @param {Number} [data.type] - [type](https://discordapp.com/developers/docs/resources/channel#channel-object-channel-types) of the channel
+     * @param {String} [data.topic] - channel topic (0-1024 characters)
      * @param {Number} [data.bitrate] - bitrate of the channel (voice only)
      * @param {Number} [data.user_limit] - user limit of a channel (voice only)
+     * @param {Number} [data.rate_limit_per_user] - amount of seconds a user has to wait before sending another message (0-21600); bots, as well as users with the permission manage_messages or manage_channel, are unaffected
+     * @param {Number} [data.position] - sorting position of the channel
      * @param {PermissionOverwrite[]} [data.permission_overwrites] - permissions overwrites for the channel
+     * @param {String} [data.parent_id] - id of the parent category for a channel
+     * @param {Boolean} [data.nsfw] - whether the channel is nsfw
      * @returns {Promise.<Channel>} [channel object](https://discordapp.com/developers/docs/resources/channel#channel-object-channel-structure)
      *
      * | Permissions needed | condition |
@@ -1053,9 +1058,14 @@ export class GuildMethods {
     createGuildChannel(guildId: string, data: {
         name: string;
         type?: number;
+        topic?: string;
         bitrate?: number;
         user_limit?: number;
+        rate_limit_per_user?: number;
+        position?: number;
         permission_overwrites?: PermissionOverwrite[];
+        parent_id?: string;
+        nsfw?: boolean;
     }): Promise<Channel>;
     /**
      * Batch update the positions of channels
