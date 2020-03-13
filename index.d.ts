@@ -147,7 +147,7 @@ export class ChannelMethods {
      * @param {String} [options.before] - Get's messages before the Id of the passed snowflake
      * @param {String} [options.after] - Get's messages after the Id of the passed snowflake
      * @param {Number} [options.limit=50] - Number of messages to get, values between 1-100 allowed
-     * @returns {Promise.<Object[]>} Array of [discord message](https://discordapp.com/developers/docs/resources/channel#message-object) objects
+     * @returns {Promise.<Message[]>} Array of [discord message](https://discordapp.com/developers/docs/resources/channel#message-object) objects
      *
      * | Permissions needed | condition |
          |--------------------|----------:|
@@ -166,7 +166,7 @@ export class ChannelMethods {
         before?: string;
         after?: string;
         limit?: number;
-    }): Promise<object[]>;
+    }): Promise<Message[]>;
     /**
      * Get a single message via Id
      * @param {String} channelId - Id of the channel
