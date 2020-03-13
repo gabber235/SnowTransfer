@@ -1,11 +1,11 @@
 declare module 'snowtransfer' {
 
-    class SnowTransfer {
+    export class SnowTransfer {
         constructor(token: string, options?: SnowTransferOptions)
     }
 
 
-    interface SnowTransferOptions {
+    export interface SnowTransferOptions {
         sentryDsn?: string;
         sentryOptions?: any;
         baseHost?: string;
