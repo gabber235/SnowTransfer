@@ -64,7 +64,7 @@ declare module 'snowtransfer' {
         /**
          * optional [sentry raven](https://docs.sentry.io/clients/node/config/) instance used for catching errors
         */
-        raven?: Any | null;
+        raven?: any | null;
     }
 
     /**
@@ -77,7 +77,7 @@ declare module 'snowtransfer' {
  * @constructor
  */
 export class ChannelMethods {
-    constructor(requestHandler: Any);
+    constructor(requestHandler: any);
     /**
      * Get a channel via Id
      * @param {String} channelId - Id of the channel
@@ -595,7 +595,7 @@ export type Message = {
  * @param {Any} requestHandler
  */
 export class UserMethods {
-    constructor(requestHandler: Any);
+    constructor(requestHandler: any);
     /**
      * Get information about current user
      * @returns {Promise.<SelfUser>} [user object](https://discordapp.com/developers/docs/resources/user#user-object)
@@ -696,7 +696,7 @@ export type SelfUser = User;
  * @constructor
  */
 export class EmojiMethods {
-    constructor(requestHandler: Any);
+    constructor(requestHandler: any);
     /**
      * Get a list of emojis of a guild
      * @param {String} guildId - Id of the guild
@@ -806,7 +806,7 @@ export type Emoji = {
  * @param {Any} requestHandler - request handler that calls the rest api
  */
 export class WebhookMethods {
-    constructor(requestHandler: Any);
+    constructor(requestHandler: any);
     /**
      * Create a new Webhook
      * @param {String} channelId - Id of the channel
@@ -942,7 +942,7 @@ export class WebhookMethods {
  * @param {Any} requestHandler - request handler that calls the rest api
  */
 export class GuildMethods {
-    constructor(requestHandler: Any);
+    constructor(requestHandler: any);
     /**
      * Create a new Guild, **limited to 10 guilds (you may create more if you are whitelisted)**
      * Check the [discord docs](https://discordapp.com/developers/docs/resources/guild#create-guild) for more infos
@@ -1628,7 +1628,7 @@ export type Ban = {
  * @param {Any} requestHandler - request handler that calls the rest api
  */
 export class InviteMethods {
-    constructor(requestHandler: Any);
+    constructor(requestHandler: any);
     /**
      * Get the invite data on an invite id
      * @param {String} inviteId - Id of the invite
@@ -1683,7 +1683,7 @@ export type Invite = {
  * @param {Any} requestHandler - request handler that calls the rest api
  */
 export class VoiceMethods {
-    constructor(requestHandler: Any);
+    constructor(requestHandler: any);
     /**
      * Get currently available voice regions that can be used when creating servers
      * @returns {Promise.<VoiceRegion[]>} Array of [voice region](https://discordapp.com/developers/docs/resources/voice#voice-region-object) objects
@@ -1722,7 +1722,7 @@ export type VoiceRegion = {
  * @param {Any} requestHandler request handler that calls the rest api
  */
 export class BotMethods {
-    constructor(requestHandler: Any);
+    constructor(requestHandler: any);
     /**
      * Get the gateway url to connect to
      * @returns  {Promise.<GatewayData>} [Gateway data](https://discordapp.com/developers/docs/topics/gateway#get-gateway-example-response)
@@ -1762,7 +1762,7 @@ export type GatewayData = {
  * @param {Any} requestHandler - request handler that calls the rest api
  */
 export class AuditLogMethods {
-    constructor(requestHandler: Any);
+    constructor(requestHandler: any);
     /**
      * Get the audit logs of the specified guild id
      * @param {String} guildId - id of a guild
@@ -1793,7 +1793,7 @@ export class AuditLogMethods {
  * @property {AuditLogEntry[]} audit_log_entries - list of [audit log entries](https://discordapp.com/developers/docs/resources/audit-log#audit-log-entry-object-audit-log-entry-structure)
  */
 export type AuditLogObject = {
-    webhooks: Any[];
+    webhooks: any[];
     users: User[];
     audit_log_entries: AuditLogEntry[];
 };
