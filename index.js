@@ -6,8 +6,9 @@ const Snowtransfer = require('./src/SnowTransfer');
  * @return {SnowTransfer}
  * @constructor
  */
-function SnowTransfer(...args) {
+function createSnowTransfer(...args) {
     return new Snowtransfer(...args);
 }
-module.exports.SnowTransfer = SnowTransfer;
-module.exports = SnowTransfer;
+
+createSnowTransfer.SnowTransfer = Snowtransfer;
+module.exports = createSnowTransfer;
